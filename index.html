@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	fetch("http://127.0.0.1:8000/student/get-all-students", {
+  "method": "GET",
+  "headers": {
+    "accept": "application/json"
+ 	 }
+	})
+	.then(response => {
+	  	return response.json()
+	})
+	.then(data => {
+		console.log(data)
+	console.log(data['students'][0]['first_name'])
+	})
+	.catch(err => {
+	  console.error(err);
+	});
+</script>
+</html>
